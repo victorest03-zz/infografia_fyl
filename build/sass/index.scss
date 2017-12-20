@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/Avenir/Avenir.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Avenir/Avenir.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Avenir/Avenir.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Avenir/Avenir.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Avenir/Avenir.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Avenir/Avenir.svg#Avenir') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@function long-shadow($numero,$color){
+    $box-shadow: -25px 25px 250px #{$color};
+    @for $i from 1 through $numero {
+        $box-shadow: '#{$box-shadow}, #{$i * -25}px #{$i * 25}px 50px #{$color}';
+    }
+    @return unquote($box-shadow);
+}
+
+html{
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Avenir;
+    line-height: 15px;
+    .infografia__fyl{
+        padding: 25px;
+        &__body{
+            width: 480px;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 5px red;
+            position: relative;
+            &__border{
+                width: 345px;
+                height: 345px;
+                top: 0;
+                left: 0;
+                border-radius: 50%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: long-shadow(4,rgba(#000,.06));
+            }
+
+            &__inner{
+                width: 320px;
+                height: 320px;
+                border: solid 5px #214A88;
+                position: absolute;
+                background-image: url(../image/imginfografia.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size:120% 120%;
+
+                &__text{
+                    height: calc(100% - 30px);
+                    width: calc(100% - 30px);
+                    display: flex;
+                    align-items: center;
+                    background: rgba(0,0,0, 0.5);
+                    color: #fff;
+                    padding: 15px;
+                    position: absolute;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition-duration: .3s;
+                    p{
+                        width: 100%;
+                        text-align: center;
+                        font-size: 15px;
+                        margin-top: 0;
+                    }
+
+                    &.active{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            &__item{
+                position: absolute;
+                top: 0;
+                transform-origin: 17px 240px;
+                &__inner{
+                    width: 30px;
+                    height: 30px;
+                    border: solid 2px #ffffff;
+                    box-shadow: -5px 5px 40px rgba(0,0,0,.2);
+                    margin-top: -20px;
+                }
+                &:nth-child(2){
+                    transform: rotate(0 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #E86900;
+                    }
+                }
+                &:nth-child(3){
+                    transform: rotate(40 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #5EAF30;
+                    }
+                }
+                &:nth-child(4){
+                    transform: rotate(80 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #45AF86;
+                    }
+                }
+                &:nth-child(5){
+                    transform: rotate(120 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #007888;
+                    }
+                }
+                &:nth-child(6){
+                    transform: rotate(160 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #005D8D;
+                    }
+                }
+                &:nth-child(7){
+                    transform: rotate(200 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #933791;
+                    }
+                }
+                &:nth-child(8){
+                    transform: rotate(240 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #D9AA5B;
+                    }
+                }
+                &:nth-child(9){
+                    transform: rotate(280 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #D42544;
+                    }
+                }
+                &:nth-child(10){
+                    transform: rotate(320 * 1deg);
+                    .infografia__fyl__body__item__inner{
+                        background: #87103F;
+                    }
+                }
+            }
+        }
+
+        &__info{
+            width: 680px;
+            height: 680px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            &__item{
+                position: absolute;
+                top: 0;
+                transform-origin: 17px 340px;
+                cursor: pointer;
+                &__inner{
+                    max-width: 250px;
+                    img{
+                        transition-duration: .3s;
+                    }
+                    p{
+                        margin: 0;
+                    }
+
+                    &__bg{
+                        transition-duration: .3s;
+                    }
+                }
+                &:nth-child(2){
+                    transform: rotate(0);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(360deg);
+                        text-align: center;
+                    }
+                }
+                &:nth-child(3){
+                    transform: rotate(40deg);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(320deg);
+                    }
+                }
+                &:nth-child(4){
+                    transform: rotate(80deg);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(280deg);
+                    }
+                }
+                &:nth-child(5){
+                    transform: rotate(120deg);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(240deg);
+                    }
+                }
+                &:nth-child(6){
+                    transform: rotate(160deg);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(200deg);
+                    }
+                }
+                &:nth-child(7){
+                    transform: rotate(200deg);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(160deg);
+                    }
+                }
+                &:nth-child(8){
+                    transform: rotate(240deg);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(120deg);
+                    }
+                }
+                &:nth-child(9){
+                    transform: rotate(280deg);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(80deg);
+                    }
+                }
+                &:nth-child(10){
+                    transform: rotate(320deg);
+                    .infografia__fyl__info__item__inner{
+                        transform: rotate(40deg);
+                    }
+                }
+
+                &:hover{
+                    .infografia__fyl__info__item__inner{
+                        &__bg{
+                            transform: scale(1.5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .circle{
+        border-radius: 50%;
+    }
+}
